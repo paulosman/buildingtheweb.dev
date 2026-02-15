@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="page-content introduction-page">
+  <div class="content-container">
+    <h1>{{ .Title }}</h1>
+    <div class="chapter-body">
+      {{ .Content }}
+    </div>
+    <nav class="chapter-nav">
+      <div></div>
+      {{ range first 1 (where .Site.RegularPages "Section" "chapters") }}
+      <a href="{{ .Permalink }}" class="chapter-nav-next">Start reading: {{ .Title }} &rarr;</a>
+      {{ end }}
+    </nav>
+  </div>
+</article>
+{{ end }}

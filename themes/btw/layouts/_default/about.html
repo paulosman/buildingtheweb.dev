@@ -1,0 +1,30 @@
+{{ define "main" }}
+<article class="page-content about-page">
+  <div class="content-container">
+    <h1>{{ .Title }}</h1>
+
+    <section class="about-book">
+      {{ .Content }}
+    </section>
+
+    <section class="about-author">
+      <h2>About the Author</h2>
+      <div class="author-card">
+        <div class="author-photo">
+          <img src="{{ "images/paul.png" | relURL }}" alt="Paul" loading="lazy">
+        </div>
+        <div class="author-bio">
+          <p>{{ .Site.Params.authorBio }}</p>
+          <div class="author-links">
+            {{ with .Site.Params.social.mastodon }}<a href="{{ . }}" target="_blank" rel="me noopener">Mastodon</a>{{ end }}
+            {{ with .Site.Params.social.bluesky }}<a href="{{ . }}" target="_blank" rel="noopener">Bluesky</a>{{ end }}
+            {{ with .Site.Params.social.linkedin }}<a href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a>{{ end }}
+            {{ with .Site.Params.social.github }}<a href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+            {{ with .Site.Params.social.website }}<a href="{{ . }}" target="_blank" rel="noopener">Personal Site</a>{{ end }}
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</article>
+{{ end }}

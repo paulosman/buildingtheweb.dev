@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section class="page-content">
+  <div class="content-container">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <div class="chapter-grid">
+      {{ range .Pages }}
+      <a href="{{ .Permalink }}" class="chapter-card">
+        <span class="chapter-number">{{ .Params.chapter_number }}</span>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Description }}</p>
+        <span class="chapter-status status-published">Read now</span>
+      </a>
+      {{ end }}
+      {{ range .Site.Params.comingSoon }}
+      <div class="chapter-card chapter-card--upcoming">
+        <span class="chapter-number">{{ .number }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+        <span class="chapter-status status-upcoming">Coming soon</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

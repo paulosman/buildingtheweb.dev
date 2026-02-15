@@ -1,0 +1,40 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero-container">
+    <p class="hero-eyebrow">A book about the history of web architecture</p>
+    <h1 class="hero-title">Building the Web</h1>
+    <p class="hero-tagline">Ideas that built the modern web.</p>
+  </div>
+</section>
+
+<section class="home-intro">
+  <div class="content-container">
+    {{ .Content }}
+  </div>
+</section>
+
+<section class="home-chapters">
+  <div class="content-container">
+    <h2>Chapters</h2>
+    <div class="chapter-grid">
+      {{ range where .Site.RegularPages "Section" "chapters" }}
+      <a href="{{ .Permalink }}" class="chapter-card">
+        <span class="chapter-number">{{ .Params.chapter_number }}</span>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Description }}</p>
+        <span class="chapter-status status-published">Read now</span>
+      </a>
+      {{ end }}
+      {{ range .Site.Params.comingSoon }}
+      <div class="chapter-card chapter-card--upcoming">
+        <span class="chapter-number">{{ .number }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+        <span class="chapter-status status-upcoming">Coming soon</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ end }}

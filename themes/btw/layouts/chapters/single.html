@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article class="chapter-content">
+  <div class="content-container">
+    <div class="chapter-header">
+      {{ with .Params.chapter_number }}<span class="chapter-number-label">Chapter {{ . }}</span>{{ end }}
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="chapter-description">{{ . }}</p>{{ end }}
+    </div>
+
+    {{ partial "share.html" . }}
+
+    <div class="chapter-body">
+      {{ .Content }}
+    </div>
+
+    {{ partial "share.html" . }}
+
+    <nav class="chapter-nav">
+      {{ with .PrevInSection }}
+      <a href="{{ .Permalink }}" class="chapter-nav-prev">&larr; {{ .Title }}</a>
+      {{ end }}
+      {{ with .NextInSection }}
+      <a href="{{ .Permalink }}" class="chapter-nav-next">{{ .Title }} &rarr;</a>
+      {{ end }}
+    </nav>
+  </div>
+</article>
+{{ end }}

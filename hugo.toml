@@ -1,0 +1,152 @@
+baseURL = "https://buildingtheweb.dev/"
+languageCode = "en-us"
+title = "Building the Web"
+theme = "btw"
+
+[params]
+  description = "The ideas built the modern web."
+  author = "Paul Osman"
+  ogImage = "images/og-default.png"
+  twitterHandle = "@paulosman"
+  authorBio = "Paul is a Software Engineer with over 25 years of experience in platform engineering and observability. He has built and scaled infrastructure at companies ranging from social platforms and developer tools to global-scale enterprise systems, with particular depth in distributed systems, reliability, and observability tooling. Paul is the author of the forthcoming book Building the Web, exploring the foundational technologies that power the internet, and writes about software engineering at [paulosman.me](https://paulosman.me). He lives in Brooklyn, New York with his family."
+
+  [params.social]
+    mastodon = "https://indieweb.social/@paulosman"
+    bluesky = "https://bsky.app/profile/paulosman.bsky.social"
+    linkedin = "https://linkedin.com/in/paulosman"
+    github = "https://github.com/paulosman"
+    website = "https://paulosman.me"
+
+  [[params.comingSoon]]
+    number = "Chapter 1"
+    title = "The Static Web"
+    description = "HTTP, httpd, and the simplest possible architecture that started everything."
+
+  [[params.comingSoon]]
+    number = "Chapter 2"
+    title = "Dynamic Content"
+    description = "CGI, mod_perl, and the invention of the application server - how the web learned to compute."
+
+  [[params.comingSoon]]
+    number = "Chapter 3"
+    title = "Load Balancing and Proxies"
+    description = "What happens when one machine isn't enough, and the abstraction that solved it."
+
+  [[params.comingSoon]]
+    number = "Chapter 4"
+    title = "State and Sessions"
+    description = "Cookies, databases, and how a stateless protocol learned to remember."
+
+  [[params.comingSoon]]
+    number = "Chapter 5"
+    title = "Scaling Databases"
+    description = "Replication, read replicas, sharding, and the strategies that kept relational databases running as the web grew."
+
+  [[params.comingSoon]]
+    number = "Chapter 6"
+    title = "Caching"
+    description = "Browser caches, reverse proxies, memcached, and the surprising difficulty of not computing the same thing twice."
+
+  [[params.comingSoon]]
+    number = "Chapter 7"
+    title = "CDNs and the Edge"
+    description = "The problem of distance, the speed of light, and the global networks built to work around both."
+
+  [[params.comingSoon]]
+    number = "Chapter 8"
+    title = "The NoSQL Movement"
+    description = "The Dynamo paper, MongoDB hype, Cassandra, HBase - and what survived when the dust settled."
+
+  [[params.comingSoon]]
+    number = "Chapter 9"
+    title = "Queues and Event Streams"
+    description = "From Redis-backed background jobs to SQS to Kafka: how async processing became the backbone of distributed systems."
+
+  [[params.comingSoon]]
+    number = "Chapter 10"
+    title = "Virtual Machines and the Cloud"
+    description = "Xen, EC2, and how abstracting hardware changed everything about building for the web."
+
+  [[params.comingSoon]]
+    number = "Chapter 11"
+    title = "Containers and Orchestration"
+    description = "Docker, OCI, Kubernetes, and the next layer of abstraction over infrastructure."
+
+  [[params.comingSoon]]
+    number = "Chapter 12"
+    title = "Continuous Delivery"
+    description = "From FTP uploads to deployment pipelines: how shipping software became a solved problem."
+
+  [[params.comingSoon]]
+    number = "Chapter 13"
+    title = "Monitoring and Observability"
+    description = "From Nagios to StatsD to distributed traces: the evolution of understanding production systems."
+
+# Menus
+[menus]
+  [[menus.main]]
+    name = "Introduction"
+    url = "/introduction/"
+    weight = 10
+
+  [[menus.main]]
+    name = "Chapters"
+    url = "/chapters/"
+    weight = 20
+
+  [[menus.main]]
+    name = "About"
+    url = "/about/"
+    weight = 30
+
+  [[menus.main]]
+    name = "Subscribe"
+    url = "/subscribe/"
+    weight = 35
+
+  [[menus.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 40
+
+  [[menus.footer]]
+    name = "Introduction"
+    url = "/introduction/"
+    weight = 10
+
+  [[menus.footer]]
+    name = "About"
+    url = "/about/"
+    weight = 20
+
+  [[menus.footer]]
+    name = "Subscribe"
+    url = "/subscribe/"
+    weight = 25
+
+  [[menus.footer]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 30
+
+# RSS
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = "application/rss+xml"
+    baseName = "feed"
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML", "RSS"]
+  page = ["HTML"]
+
+# Chapters sort by weight
+[taxonomies]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = false
