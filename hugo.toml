@@ -82,6 +82,11 @@ theme = "btw"
     title = "Monitoring and Observability"
     description = "From Nagios to StatsD to distributed traces: the evolution of understanding production systems."
 
+  [[params.comingSoon]]
+    number = "Chapter 14"
+    title = "SRE and DevOps"
+    description = "CFEngine, Puppet, Chef, and the tools that broke down the wall between developers and operations."
+
 # Menus
 [menus]
   [[menus.main]]
