@@ -4,7 +4,7 @@ title = "Building the Web"
 theme = "btw"
 
 [params]
-  description = "The ideas built the modern web."
+  description = "A history of web architecture, from static file serving to containerized applications (1993–2015)."
   author = "Paul Osman"
   ogImage = "images/og-default.png"
   twitterHandle = "@paulosman"
@@ -19,73 +19,93 @@ theme = "btw"
 
   [[params.comingSoon]]
     number = "Chapter 1"
-    title = "The Static Web"
-    description = "HTTP, httpd, and the simplest possible architecture that started everything."
+    title = "The Network: Then and Now"
+    description = "Physical networking constraints from 1993, the evolution from dial-up to broadband, and the infrastructure decisions that shaped everything after."
 
   [[params.comingSoon]]
     number = "Chapter 2"
-    title = "Dynamic Content"
-    description = "CGI, mod_perl, and the invention of the application server - how the web learned to compute."
+    title = "The Early Web"
+    description = "HTTP design, the initial RFCs, and static HTML document serving - the architectural trade-offs embedded in the web's earliest choices."
 
   [[params.comingSoon]]
     number = "Chapter 3"
-    title = "Load Balancing and Proxies"
-    description = "What happens when one machine isn't enough, and the abstraction that solved it."
+    title = "The Dynamic Web"
+    description = "CGI, Perl, PHP, and the evolution from library to application platform - how the web learned to compute."
 
   [[params.comingSoon]]
     number = "Chapter 4"
-    title = "State and Sessions"
-    description = "Cookies, databases, and how a stateless protocol learned to remember."
+    title = "Load Balancers and Proxies"
+    description = "Scaling challenges that required specialized hardware to intercept and reroute requests or serve cached content."
 
   [[params.comingSoon]]
     number = "Chapter 5"
-    title = "Scaling Databases"
-    description = "Replication, read replicas, sharding, and the strategies that kept relational databases running as the web grew."
+    title = "State and Sessions"
+    description = "How clients and servers managed primitives beyond individual requests - cookies shipped in 1994, and the RFCs that followed."
 
   [[params.comingSoon]]
     number = "Chapter 6"
-    title = "Caching"
-    description = "Browser caches, reverse proxies, memcached, and the surprising difficulty of not computing the same thing twice."
+    title = "SSL/TLS and HTTPS"
+    description = "Netscape's secure transport mechanism, the evolution of TLS, and the adoption initiatives like Let's Encrypt that made encryption ubiquitous."
 
   [[params.comingSoon]]
     number = "Chapter 7"
-    title = "CDNs and the Edge"
-    description = "The problem of distance, the speed of light, and the global networks built to work around both."
+    title = "Scaling Databases"
+    description = "MySQL and PostgreSQL adoption, read-replica implementation, and the community contributions enabling web-scale persistence."
 
   [[params.comingSoon]]
     number = "Chapter 8"
-    title = "The NoSQL Movement"
-    description = "The Dynamo paper, MongoDB hype, Cassandra, HBase - and what survived when the dust settled."
+    title = "Caching"
+    description = "Squid and Varnish as accelerators, memcached and Redis as distributed caching solutions, and the surprising difficulty of not computing the same thing twice."
 
   [[params.comingSoon]]
     number = "Chapter 9"
-    title = "Queues and Event Streams"
-    description = "From Redis-backed background jobs to SQS to Kafka: how async processing became the backbone of distributed systems."
+    title = "CDNs and the Edge"
+    description = "Consistent hashing, Akamai, and the global networks built to solve the problem of distance and the speed of light."
 
   [[params.comingSoon]]
     number = "Chapter 10"
-    title = "Virtual Machines and the Cloud"
-    description = "Xen, EC2, and how abstracting hardware changed everything about building for the web."
+    title = "The API Era"
+    description = "SaaS proliferation, REST standardization, OAuth and OpenID authentication, and the rise of microservice architectures including BFF and GraphQL."
 
   [[params.comingSoon]]
     number = "Chapter 11"
-    title = "Containers and Orchestration"
-    description = "Docker, OCI, Kubernetes, and the next layer of abstraction over infrastructure."
+    title = "NoSQL (including Search)"
+    description = "Google's BigTable paper, Amazon's Dynamo paper, and the tools like Solr and Elasticsearch that redefined data storage and retrieval."
 
   [[params.comingSoon]]
     number = "Chapter 12"
-    title = "Continuous Delivery"
-    description = "From FTP uploads to deployment pipelines: how shipping software became a solved problem."
+    title = "Queues and Event Streams"
+    description = "From job systems to ActiveMQ, RabbitMQ, and Kafka: how async processing became the backbone of distributed systems."
 
   [[params.comingSoon]]
     number = "Chapter 13"
-    title = "Monitoring and Observability"
-    description = "From Nagios to StatsD to distributed traces: the evolution of understanding production systems."
+    title = "Virtual Machines and the Cloud"
+    description = "From VMWare Workstation through Xen, AWS, KVM, and microVMs - how abstracting hardware enabled serverless architecture."
 
   [[params.comingSoon]]
     number = "Chapter 14"
+    title = "Configuration Management and IaaC"
+    description = "CFEngine, Puppet, Chef, and the Infrastructure as Code approaches that enabled automated provisioning at scale."
+
+  [[params.comingSoon]]
+    number = "Chapter 15"
+    title = "Containers and Orchestration"
+    description = "From chroot and FreeBSD jails through Linux namespaces and cgroups to Docker - the next layer of abstraction over infrastructure."
+
+  [[params.comingSoon]]
+    number = "Chapter 16"
+    title = "Continuous Delivery"
+    description = "IMVU's multiple daily deployments, Flickr's '10+ Deploys Per Day', and how shipping software became a solved problem."
+
+  [[params.comingSoon]]
+    number = "Chapter 17"
+    title = "Monitoring and Observability"
+    description = "From basic uptime checks through MRTG, Nagios, Graphite, and StatsD to modern observability principles."
+
+  [[params.comingSoon]]
+    number = "Chapter 18"
     title = "SRE and DevOps"
-    description = "CFEngine, Puppet, Chef, and the tools that broke down the wall between developers and operations."
+    description = "The cultural shifts that eliminated barriers between application developers and operations teams."
 
 # Menus
 [menus]
@@ -93,6 +113,11 @@ theme = "btw"
     name = "Introduction"
     url = "/introduction/"
     weight = 10
+
+  [[menus.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 15
 
   [[menus.main]]
     name = "Chapters"
@@ -118,6 +143,11 @@ theme = "btw"
     name = "Introduction"
     url = "/introduction/"
     weight = 10
+
+  [[menus.footer]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 15
 
   [[menus.footer]]
     name = "About"
